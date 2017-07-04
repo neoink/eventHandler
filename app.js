@@ -93,7 +93,7 @@ EventHandler.prototype.rotationDevice = function() {
         //__If device rotation has changed => execute callback
         if (screenOrientation !== currentOrientation
         ) {
-            console.log('test', currentOrientation);
+            this.orientation = currentOrientation;
 
             for (var prop in self.rotationCallStack) {
                 if (self.rotationCallStack.hasOwnProperty(prop)) {
@@ -121,7 +121,7 @@ $(function() {
     };
 
     eventHandler.rotationCallStack['RotationOne'] = function() {
-        //__Access to previous orientation device value
+        //__Access to orientation device value
         console.log(eventHandler.getOrientation());
 
         console.log('event rotation One');
